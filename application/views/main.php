@@ -65,8 +65,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<br><a id="add" href='/index.php/main/edit' target='_blank'>+ Добавить</a>
 	
 	<script>
-		var xmlhttp = new XMLHttpRequest();
 		function del(id){
+			var conf = confirm("Вы уверены, что хотите удалить видео?");
+			if (conf == false) return; 
+			var xmlhttp = new XMLHttpRequest();
 			xmlhttp.onreadystatechange = function() {
 	            if (xmlhttp.readyState == 4) {
 	                if (xmlhttp.status == 200) {
